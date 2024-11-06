@@ -20,7 +20,7 @@ header {
 }
 .sidebar {
     width: 200px;
-    background-color: #333;
+    background-color: #655d5d;
     position: fixed;
     top: 0;
     left: 0;
@@ -98,16 +98,12 @@ footer {
 <body>
 
 <header>
-    Currency Converter App
+   <h1>HOME</h1>
 </header>
 
 <div class="sidebar">
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Converter</a>
-        <a href="#">Rates</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+      <h1>Currency Converter</h1>
     </nav>
 </div>
 
@@ -172,13 +168,13 @@ footer {
 
             <button type="submit" class="convert-button">Convert</button>
         </form>
-
+        
         <div class="result" id="result"></div>
     </div>
 </div>
 
 <footer>
-    &copy; 2024 Currency Converter App. All rights reserved.
+     2024 Currency Converter App
 </footer>
 
 <script>
@@ -196,7 +192,6 @@ footer {
                 const rate = data.rates[toCurrency];
                 const convertedAmount = (amount * rate).toFixed(2);
     
-                // Display the result
                 document.getElementById('result').textContent = 
                     `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
             })
