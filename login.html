@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+            <button type="button" id="resetButton">Reset</button>
+            <p id="errorMessage" class="error-message"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (username === "" || password === "") {
+                errorMessage.textContent = "Please fill out both fields.";
+            } else if (password.length < 6) {
+                errorMessage.textContent = "Password must be at least 6 characters.";
+            } else {
+                errorMessage.textContent = ""; 
+                window.location.href = "index.html";
+            }
+        });
+        document.getElementById("resetButton").addEventListener("click", function() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("errorMessage").textContent = "";
+        });
+    </script>
+</body>
+</html>
